@@ -77,14 +77,16 @@ section.hero {
 
 @media (min-width: 768px) {
     section.hero {
-        display: block;
+        display: flex;
         flex-direction: row;
+        height: 500px;
         background-image: url('../images/hero-image-desktop.png');
         background-position: right;
         position: relative;
+        justify-content: flex-start;
     }
-    section.hero-text-box{
-        position: absolute;
+    .hero-text-box{
+        position: relative;
         width: 50%;
         height: 100%;
     }
@@ -130,7 +132,7 @@ section.stats {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	padding-bottom: 100px;
+	padding-bottom: 150px;
     padding-top: 75px
 }
 
