@@ -1,4 +1,35 @@
 /* FILEPATH: /Users/loonarbot/Documents/dev/south-carolina-sumter/css/sumter-branding.css */
+@font-face {
+  font-family: 'Berlingske Sans Regular';
+  src: url('../fonts/BerlingskeSans-Md.woff2') format('woff2'),
+      url('../fonts/BerlingskeSans-Md.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Berlingske Sans Bold';
+  src: url('../fonts/BerlingskeSans-XBd.woff2') format('woff2'),
+      url('../fonts/BerlingskeSans-XBd.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Berlingske Sans Xcn';
+  src: url('../fonts/BerlingskeSansXCn-XBd.woff2') format('woff2'),
+      url('../fonts/BerlingskeSansXCn-XBd.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Berlingske Serif Bold';
+  src: url('../fonts/BerlingskeSerif-Bd.woff2') format('woff2'),
+      url('../fonts/BerlingskeSerif-Bd.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
 
 :root {
     /* Colors */
@@ -16,8 +47,8 @@
     /* Brand Font Families */
     --font-fam: 'Berlingske Sans Regular', 'Roboto', Arial, sans-serif;
     --font-fam-bold: 'Berlingske Sans Bold','Roboto', sans-serif;
-    --font-fam-header: Impact,'Berlingske Sans Xcn', 'Impact', sans-serif;
-	  --font-fam-serif: 'Berlingske Serif', 'Georgia', serif;
+    --font-fam-header: 'Berlingske Sans Xcn', sans-serif;
+	  --font-fam-serif-bold: 'Berlingske Serif Bold', 'Georgia', serif;
 
 	  --inset-box-shadow: inset 0 0 30px rgb(0 0 0 / 60%);
 	  --headline-text-shadow: 5px 5px 20px rgb(0 0 0 / 100%);
@@ -36,10 +67,8 @@ body {
 p {
     color: var(--color-black);
     font-family: var(--font-fam);
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 155%; /* 31px */
 }
 
 .color-primary {
@@ -108,10 +137,9 @@ h3 {
 }
 
 h4 {
-  font-family: 'Roboto', Arial, sans-serif;
-  font-size: 20px;
+  font-family: var(--font-fam-bold);
+  font-size: 24px;
   margin-bottom: -20px;
-  letter-spacing: -1px;
   margin-top: 5px;
 }
 
@@ -127,22 +155,24 @@ h6 {
 
 button, a.button, input[type="submit"]{
   font-family: var(--font-fam);
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--color-white);
-  background-color: var(--color-black);
-  border: none;
-  border-radius: 50px;
-  /* height: 40px; */
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  flex-direction: column;
-  padding: 12px 50px;
-  margin: 13px auto;
-  min-width: 186px;
-  text-transform: uppercase;
-  text-decoration: none;
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--color-white);
+	background-color: var(--color-black);
+	border: none;
+	border-radius: 50px;
+	/* height: 40px; */
+	cursor: pointer;
+	transition: all 0.3s;
+	display: flex;
+	flex-direction: column;
+	padding: 5px 50px;
+	/* margin: 13px auto; */
+	min-width: 186px;
+	text-transform: uppercase;
+	text-decoration: none;
+	width: fit-content;
+	text-align: center;
 }
 
 section.bg-color-black a.button {
@@ -162,12 +192,17 @@ section.bg-color-black h4, section.bg-color-white h4, section h4 {
   color: var(--color-secondary);
 }
 
+section.bg-color-black h4.color-white {
+  color: var(--color-white);
+}
+
 section.bg-color-primary h4, section.bg-color-secondary h4 {
   color: var(--color-black);
 }
 
 section.bg-color-black p, section.bg-color-primary p, section.bg-color-secondary p {
   color: var(--color-white);
+  max-width: 50;
 }
 
 section.bg-color-white p {
