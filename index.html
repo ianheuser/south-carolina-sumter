@@ -8,6 +8,8 @@
         <title>South Carolina Sumter</title>
         <link rel="stylesheet" href="./style/sumter-branding.css">
         <link rel="stylesheet" href="./style/landing-page.css">
+        <!-- Add Font Awesome Kit for Social Icons-->
+        <script src="https://kit.fontawesome.com/fe3a541148.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -65,9 +67,8 @@
             </div>
         </section>
 
-        <!-- SUMTER IS THE SMART MOVEn-->
-
-        <section class="circle-top bg-color-black">
+        <!--YOUR FUTURE HAS OPTIONS-->
+        <section class="circle-top bg-color-black your-future">
             <div class="circle-img microscope"></div>
             <div class="text">
                 <h2 class="color-secondary">Your Future Has <span class="color-white bottom">Options</span></h2>  
@@ -83,8 +84,8 @@
             </div>
         </section>
 
-        <!-- Why Choose Sumter Columns-->
 
+        <!-- Why Choose Sumter Columns-->
         <section class="why-choose-usc bg-color-black">
             
             <h2 class="color-secondary">Why Choose <span class="bottom color-white">USC Sumter</span></h2>
@@ -105,7 +106,6 @@
         </section>
     
         <!-- Get the Full Experience -->
-
         <section class="circle-top reverse">
             <div class="circle-img experience">
             </div>           
@@ -128,7 +128,6 @@
         </section>
 
         <!-- Affordability and Value -->
-
         <section class="circle-top bg-color-secondary">
             <div class="circle-img value"></div>         
             <div class="text">
@@ -148,9 +147,55 @@
             </div>
         </section>
 
-        <section class="footer">
-            <p>2022 South Carolina Sumter</p>
-        </section>
+        <footer>
+            <div class="footer-contain">
+                <div class="information">
+                    <img src="./images/centered-logo.png" alt="South Carolina Sumter Logo" class="logo center" />
+                    <img src="./images/logo.png" alt="South Carolina Sumter Logo" class="logo left" />
+                    
+                    <div class="contact">
+                        <p>200 Miller Road Sumter, SC 29150</p>
+                        <p>803-775-8727</p>
+                        <p>admissions@uscsumter.edu</p>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.facebook.com/UniversityofSouthCarolinaSumter/" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/channel/UChinBV-lRlGdb59JkapaKgw" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/uscsumter/?hl=en" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/school/uscsumter/" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div class="copy">
+                        <p>&copy; 2024 University of South Carolina Sumter</p> 
+                        <p>All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </footer>
+
+        <script>
+
+            /*  
+                We select all the icon images.
+                An event listener is added to the window's scroll event.
+                Inside the function, we loop through each icon:
+                We get the position of the icon relative to the top of the viewport.
+                If the icon is within the visible part of the window, we add the `fade-in` class to trigger the CSS animation.
+            */
+            
+            const icons = document.querySelectorAll('.column img, .circle-img');
+            window.addEventListener('scroll', function() {
+                icons.forEach(icon => {
+                    const iconTop = icon.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (iconTop < (windowHeight - windowHeight / 5)) {
+                        icon.classList.add('fade-in');
+                    } 
+                });
+            });
+            
+        </script>
 
     </body>  
+
 </html>

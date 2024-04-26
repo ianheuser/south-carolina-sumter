@@ -9,7 +9,7 @@ html,body {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 385px;
+    min-width: 393px;
     width: 100%;
 }
 
@@ -37,27 +37,6 @@ html,body {
 
 .header {
     margin-bottom: 20px; 
-}
-
-.columns {
-    display: flex;
-    justify-content: space-around; 
-    flex-direction: column;
-}
-
-.column {
-    flex: 1; /* Columns take up equal space */
-    padding: 20px;
-}
-
-.column img {
-    max-width: 80px;
-    margin-bottom: 10px;
-}
-
-.logo {
-    width: 216px;
-    height: 46px;
 }
 
  .form-section {
@@ -183,6 +162,8 @@ section.circle-top {
     background-size: contain;
     margin-top: -130px;
     background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 .circle-img.value {
 	background-image: url('../images/circle-value.png')
@@ -196,9 +177,60 @@ section.circle-top {
 	background-image: url('../images/circle-experience.png')
 }
 
-.footer {
-    background-color: #f2f2f2;
+
+
+header .logo {
+    width: 200px;
+}
+
+footer {
     text-align: center;
+    border-top: 60px solid var(--color-primary);
+    background-color: var(--color-black);
+}
+
+footer .logo {
+    width: 60%;
+    max-width: 350px;
+    min-width: 200px;
+    margin: 75px auto 25px;
+}
+
+footer .logo.left {
+    display: none;
+}
+
+footer p {
+    color: white;
+	line-height: 1.5;
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+}
+
+.copy {
+    display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+	border-top: solid white 2px;
+	margin-bottom: 20px;
+	width: 60%;
+	align-items: center;
+	margin: 0px auto 75px;
+	max-width: 400px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	margin: 25px auto;
+	width: 60%;
+    gap: 30px;
+}
+
+.social a svg {
+    color: white;
+    font-size: 30px;
 }
 
 .text{
@@ -207,16 +239,18 @@ section.circle-top {
 	flex-direction: column;
 	align-items: center;
     text-align: center;
+    width: 80%;
 }
 
 .sumter-smart .text {
 	max-width: 660px;
 }
+/*
 section {
     padding-left: 5%;
     padding-right: 5%;
 }
-
+*/
 .why-choose-usc {
     width: 100%; 
     margin: 0 auto;
@@ -224,6 +258,16 @@ section {
     padding-top: 30px;
 	padding-bottom: 150px;
     margin-top: -1px;
+}
+.why-choose-usc::before {
+    content: '<div class="white-line></div>';
+    display: block;
+    width: 80vw;
+    height: 2px;
+    background-color: var(--color-white);
+    max-width: 300px;
+    margin-bottom: 90px;
+    
 }
 
 .why-choose-usc .columns .column {
@@ -237,7 +281,44 @@ section {
     margin-bottom: 50px;
 }
 
-@media (min-width: 768px) {
+.columns {
+    display: flex;
+    justify-content: space-around; 
+    flex-direction: column;
+}
+
+.column {
+    flex: 1; /* Columns take up equal space */
+    padding: 20px;
+}
+
+.column img {
+    max-width: 80px;
+    margin-bottom: 10px;
+    opacity: 0; /* Start with icons hidden */
+    transition: opacity 0.5s ease-in-out; /* Add a smooth fade-in transition */
+}
+
+.column img.fade-in, .circle-img.fade-in, .fade-in {
+    opacity: 1; /* Make icons visible when the "fade-in" class is added */
+}
+
+section.circle-top.your-future {
+    padding-bottom: 75px;
+}
+
+.mascot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+    overflow: hidden;
+}
+
+
+
+@media (min-width: 900px) {
 	section.hero {
         display: flex;
         flex-direction: row;
@@ -259,7 +340,7 @@ section {
     }
 
     .why-choose-usc {
-        padding-bottom: 75px;
+        padding-bottom: 150px;
     }
 
     .why-choose-usc .columns {
@@ -269,6 +350,10 @@ section {
 }
 
 @media (min-width: 1200px) {
+
+    header {
+        height: 175px;
+    }
 
 	 section.stats {
         max-width: 1200px;
@@ -291,7 +376,6 @@ section {
     }
 
     .circle-img {
-        display: flex;
         position: relative;
         width: 587px;
         height:587px;
@@ -300,7 +384,6 @@ section {
         background-position: center;
         background-size: contain;
         margin: 88px 60px 88px 0px;
-
     }
 
     .circle-top.reverse .circle-img {
@@ -327,5 +410,66 @@ section {
 		text-align: left;
         align-items: flex-start;
     }
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+    footer .logo.left {
+        display: block;
+        width: unset;
+        margin: unset;
+    }
+    footer .logo.center {
+        display: none;
+    }
+    .footer-contain{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1440px;
+    }
 
+    .social {
+        margin: unset;
+        margin-bottom: 20px;
+        justify-content: flex-start;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 30px 0px;
+    }
+
+    .information {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 75px;
+    }
+    .copy{
+        margin: unset;
+        align-items: flex-start;
+        width: unset;
+    }
+    .copy p {
+        margin: 0px;
+        text-align: left;
+    }
+
+    .contact, .social, .copy{
+        margin-left: 85px;
+    }
+}
+
+@media (min-width: 1440px) {
+    section.circle-top {
+        gap: 100px;
+    }
+    
 }
