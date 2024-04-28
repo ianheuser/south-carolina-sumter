@@ -47,13 +47,116 @@ body {
     margin-bottom: 20px; 
 }
 
+form {
+    display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	gap: 20px;
+}
+
  .form-section {
     background-color: var(--color-secondary);
     text-align: center;
     height: 45px;
     top: 80px;
     box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+    flex-direction: column;
 }     
+.modal-header h2 {
+    font-size: 28px;
+	margin-top: -13px;
+	margin-bottom: 8px;
+}
+
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.modal-background.reveal {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    background-color: var(--color-white);
+	border-radius: 10px;
+	padding: 28px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+	max-width: 400px;
+	width: 80%;
+	box-sizing: border-box;
+	transition: background-color 0.3s ease-in-out;
+    margin-top: 145px;
+}
+
+select {
+    width: 100%;
+
+}
+
+.modal-header {
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: solid .5px rgba(0, 0, 0, 0.8);
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.input-container{
+    display: flex;
+	flex-direction: row;
+	width: 100%;
+	gap: 2px;
+	align-items: center;
+}
+
+.input-container label {
+    font-size: 14px;
+	font-weight: 600;
+	min-width: 94px;
+}
+
+.input-container input[type="text"],
+.input-container input[type="email"],
+.input-container input[type="zip"],
+.input-container select {
+    width: 100%;
+	border-color: rgba(0, 0, 0, 0.3);
+	height: 35px;
+	padding-left: 13px;
+}
+
+.input-container.submit {
+	justify-content: flex-start;
+}
+
+#submit {
+    width: fit-content;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+span.close {
+  position: absolute;
+  top: -40px;
+  right: -17px;
+  font-size: 50px;
+  cursor: pointer;
+}
+
 
 .sticky {
     z-index: 1000;
@@ -94,15 +197,11 @@ section.hero {
 
 .sumter-smart h4 {
     color: var(--color-black);
+    font-size: 21px;
 }
 
 .sumter-smart p {
     color: white;
-}
-
-h2 {
-   display: flex;
-   flex-direction: column;;
 }
 
 h2 span.bottom {
@@ -116,6 +215,10 @@ h2 span.sub {
     line-height: normal;
     display: flex;
     flex-direction: column;
+}
+
+.modal-body p {
+    font-size: 15px;
 }
 
 section.stats {
@@ -156,23 +259,27 @@ section.circle-top {
 
 
 .circle-top h2{
-    margin-top: 40px;
+    margin: 40px auto 10px;
+    text-align: center;
 }
 
 .circle-img {
     display: block;
-    position: relative;
-    width: 65vw;
-    height: 65vw;
-    max-width: 500px;
-    max-height: 500px;
-    background-position: center;
-    background-size: contain;
-    margin-top: -130px;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
+	position: relative;
+	background-position: center;
+	background-size: contain;
+	margin-top: -130px;
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition: opacity 2s ease-in-out;
+	width: 70vw;
+	height: 70vw;
+	max-width: 450px;
+	min-width: 300px;
+	min-height: 300px;
+	max-height: 450px;
 }
+
 .circle-img.value {
 	background-image: url('../images/circle-value.png')
 }
@@ -246,24 +353,21 @@ footer p {
     font-size: 30px;
 }
 
+
+
 .text{
     max-width: 500px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-    text-align: center;
+	align-items: flex-start;
+    text-align: left;
     width: 80%;
 }
 
 .sumter-smart .text {
 	max-width: 660px;
 }
-/*
-section {
-    padding-left: 5%;
-    padding-right: 5%;
-}
-*/
+
 .why-choose-usc {
     width: 100%; 
     margin: 0 auto;
@@ -306,7 +410,8 @@ section {
 }
 
 .column img {
-    max-width: 80px;
+    height: 150px;
+    width: 150px;
     margin-bottom: 10px;
     opacity: 0; /* Start with icons hidden */
     transition: opacity 0.5s ease-in-out; /* Add a smooth fade-in transition */
@@ -360,12 +465,39 @@ button#more-info {
 	position: relative;
 	margin-top: -50px;
 	height: 400px;
+    rotate: 0deg;
 	background-image: url(../images/mascot.svg);
 	background-position: top center;
 	background-repeat: no-repeat;
 }
 
+h2 span.bottom {
+    display: block;
+}
+
+.text a.button{
+    margin: 20px auto;
+}
+
 @media (min-width: 900px) {
+
+        
+    .modal-header h2 {
+        font-size: 32px;
+    }
+
+
+    h2 span.bottom {
+        display: contents;
+    }
+    
+    .input-container label {
+        min-width: 120px;
+    }
+    .modal-body p {
+        font-size: 16px;
+    }
+
 	section.hero {
         display: flex;
         flex-direction: row;
@@ -392,6 +524,7 @@ button#more-info {
 
     .why-choose-usc .columns {
         flex-direction: row;
+        margin-top: 40px;
     }
 
     header {
@@ -411,20 +544,57 @@ button#more-info {
         max-width: 1200px;
     }
 
+
+	.circle-img.value {
+		background-image: url('../images/circle-value-desktop.png')
+	}
+	.circle-img.microscope {
+		background-image: url('../images/circle-microscope-desktop.png')
+	}
+	.circle-img.experience {
+		background-image: url('../images/circle-experience-desktop.png')
+	}
+
+
 }
 
 @media (min-width: 1200px) {
 
+    .text a.button{
+        margin: 20px 0px;
+        }
+    .circle-top h2 {
+        margin: 40px 0px 10px;
+        text-align: left;
+    }
+    .sumter-smart .text, .sumter-smart .text h4 {
+        text-align: center;
+        align-items: center;
+    }
+
+    .circle-top .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        max-width: 500px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+
+
     .mascot-contain {
         display: block;
-        width: 814px;
-        position: absolute;
-        margin-top: unset;
-        height: 584px;
-        rotate: 13deg;
-        top: -223px;
-        right: -80px;
-        bottom: unset;      
+		width: 706px;
+		position: absolute;
+		margin-top: unset;
+		height: 566px;
+		rotate: 0deg;
+		top: -223px;
+		right: 0px;
+		bottom: unset;  
+        background-image: url(../images/mascot-rotated.svg);    
     }
     
     #value { 
@@ -432,9 +602,6 @@ button#more-info {
     }
 	 section.stats {
         max-width: 1200px;
-    }
-   h2 span.bottom {
-        display: contents;
     }
     h3{
         line-height: 1;
@@ -464,27 +631,7 @@ button#more-info {
     .circle-top.reverse .circle-img {
         margin: 88px 0px 88px 60px;
     }
-    
-		
-	.circle-img.value {
-		background-image: url('../images/circle-value-desktop.png')
-	}
-	.circle-img.microscope {
-		background-image: url('../images/circle-microscope-desktop.png')
-	}
-	.circle-img.experience {
-		background-image: url('../images/circle-experience-desktop.png')
-	}
-	
-    .circle-top .text {
-        display: flex;
-		flex-direction: column;
-		justify-content: center;
-		width: 50%;
-		max-width: 500px;
-		text-align: left;
-        align-items: flex-start;
-    }
+
     footer{
         display: flex;
         flex-direction: column;

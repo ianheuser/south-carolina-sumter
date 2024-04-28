@@ -14,6 +14,50 @@
 
     <body>
 
+        <!-- BEGIN HIDDEN MODAL AND FORM -->
+        <div class="modal-background">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2>Request <span class="color-primary"> Information</span></h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tell us a little bit about yourself, and we'll reach out to answer any questions you may have.</p>
+                    <form action="submit.php" method="post">
+                        <div class="input-container">
+                            <label for="first-name">First Name:</label>
+                            <input placeholder="First Name" type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="last-name">Last Name:</label>
+                            <input placeholder="Last Name" type="text" id="last-name" name="last-name" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="email">Email:</label>
+                            <input placeholder="Email" type="email" id="email" name="email" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="zip">Zip:</label>
+                            <input placeholder="Zip" type="zip" id="zip" name="zip" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="student-type">Student Type:</label>
+                            <select id="student-type" name="student-type">
+                                <option value="">Student Type</option>
+                                <option value="Associate">Associate's Degree</option>
+                                <option value="Bachelor">Bachelor's Degree</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>  
+                        <div class="input-container submit">
+                            <input id="submit" type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- END HIDDEN MODAL-->
+
+
         <!-- Header Section -->
         <header class="sticky">
             <img src="./images/logo.png" alt="South Carolina Sumter Logo" class="logo">
@@ -197,7 +241,19 @@
                     } 
                 });
             });
-            
+
+            const modal = document.querySelector('.modal-background');
+            const moreInfo = document.getElementById('more-info');
+            const close = document.querySelector('.close');
+
+            moreInfo.addEventListener('click', function() {
+                modal.classList.add('reveal');
+            });
+
+            close.addEventListener('click', function() {
+                modal.classList.remove('reveal');
+            });
+        
         </script>
 
     </body>  
