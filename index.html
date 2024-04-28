@@ -18,12 +18,12 @@
         <div class="modal-background">
             <div class="modal">
                 <div class="modal-header">
-                    <h2>Request <span class="color-primary"> Information</span></h2>
+                    <h2>Request <span class="color-secondary"> Information</span></h2>
                     <span class="close">&times;</span>
                 </div>
                 <div class="modal-body">
                     <p>Tell us a little bit about yourself, and we'll reach out to answer any questions you may have.</p>
-                    <form action="submit.php" method="post">
+                    <form id="info-form" action="/index.html" method="post">
                         <div class="input-container">
                             <label for="first-name">First Name:</label>
                             <input placeholder="First Name" type="text" id="first-name" name="first-name" required>
@@ -50,24 +50,23 @@
                             </select>
                         </div>  
                         <div class="input-container submit">
-                            <input id="submit" type="submit" value="Submit">
+                            <input aria-label="submit" id="submit" type="submit" value="Submit">
                         </div>
                     </form>
                 </div>
             </div>
-        </div><!-- END HIDDEN MODAL-->
-
+        </div> <!-- .modal-background -->
+        
+        
 
         <!-- Header Section -->
         <header class="sticky">
             <img src="./images/logo.png" alt="South Carolina Sumter Logo" class="logo">
-           <!-- <img src="./images/menu.svg" alt="Menu Icon" class="menu"> -->
         </header>
         
         <!-- Link to open the form section -->
-        <section class="form-section bg-color-secondary sticky">
-            <button id="more-info" class="color-white text-button">Request More Info</button>
-        </section>
+        
+        <button id="more-info" class="color-white bg-color-secondary sticky">Request More Info</button>
 
         <!-- Hero Banner -->
         <section class="hero">
@@ -81,8 +80,8 @@
 
         <!-- SUMTER IS THE SMART MOVE-->
         <section class="sumter-smart bg-color-secondary">
-            <h2>Sumter is the <span class="color-white bottom">Smart Move</span></h2>  
-            <div class="text">
+            <h2 class="animate-upward">Sumter is the <span class="color-white bottom">Smart Move</span></h2>  
+            <div class="text animate-upward fade-in">
                 <p>Congratulations you just discovered a smarter way to invest in your future!</p>
     
                 <h4>Affordable, flexible, and accessible.</h4>
@@ -95,7 +94,7 @@
         </section>
 
         <!-- 3 Columns of stats -->
-        <section class="stats">
+        <section class="stats animate-upward">
             <div class="stat one">
                 <h2 class="gv stat-text color-secondary">#2</h2>
                 <h3 class="color-primary">Community College <br />in South Carolina</h3>
@@ -113,7 +112,7 @@
 
         <!--YOUR FUTURE HAS OPTIONS-->
         <section class="circle-top bg-color-black your-future">
-            <div class="circle-img microscope"></div>
+            <div class="circle-img microscope" aria-label="Students looking through a microscope"></div>
             <div class="text">
                 <h2 class="color-secondary">Your Future Has <span class="color-white bottom">Options</span></h2>  
                 <p>Our degree programs allow you to plan ahead, whether that's earning a 2-year degree, so you can get right to work or continuing on to earn your bachelor's degree. We have the degree and program options that work for you.   </p>
@@ -135,15 +134,15 @@
             <h2 class="color-secondary">Why Choose <span class="bottom color-white">USC Sumter</span></h2>
              <div class="columns">
                 <div class="column">
-                    <img src="./images/paper-icon.svg" alt="Icon 1" class="svg-icons">                
+                    <img src="./images/paper-icon.svg" alt="A circular icon of a todo list with checkmarks on it" class="svg-icons">                
                     <h4 class="color-white">Emphasis on career readiness</h4>
                 </div>
                 <div class="column">
-                    <img src="./images/student-icon.svg" alt="Icon 2" class="svg-icons">    
+                    <img src="./images/student-icon.svg" alt="A circular icon with a worker at his computer" class="svg-icons">    
                     <h4 class="color-white">Supportive, Accessible Faculty</h4>
                 </div>
                 <div class="column">
-                    <img src="./images/building-icon.svg" alt="Icon 3" class="svg-icons">
+                    <img src="./images/building-icon.svg" alt="An icon of a university" class="svg-icons">
                     <h4 class="color-white">Partnerships with other usc campuses</h4>
                 </div>
             </div>
@@ -151,7 +150,7 @@
     
         <!-- Get the Full Experience -->
         <section class="circle-top reverse">
-            <div class="circle-img experience">
+            <div class="circle-img experience" aria-label="Two USCS Students">
             </div>           
             <div class="text">
                 <h2 class="color-primary">Get The Full <span class="color-secondary bottom">Experience</span></h2>  
@@ -173,7 +172,7 @@
 
         <!-- Affordability and Value -->
         <section class="circle-top bg-color-secondary" id="value">
-            <div class="circle-img value"></div>         
+            <div class="circle-img value" aria-label="A USCS student picking a book out from a library shelf"></div>         
             <div class="text">
                 <h2 class="color-black">Affordability And <span class="color-white bottom">Value</span></h2>  
                 <p>You can feel good knowing that a USC Sumter education is extremely affordable. More importantly, it's valuable! We will work with you to help you pay the least amount possible. Types of financial aid available: </p>
@@ -195,8 +194,8 @@
             <div class="footer-contain">
 
                 <div class="information">
-                    <img src="./images/centered-logo.png" alt="South Carolina Sumter Logo" class="logo center" />
-                    <img src="./images/logo.png" alt="South Carolina Sumter Logo" class="logo left" />
+                    <img src="./images/centered-logo.png" alt="South Carolina Sumters center aligned Logo" class="logo center" />
+                    <img src="./images/logo.png" alt="South Carolina Sumter Logo Aligned to the Left" class="logo left" />
                     
                     <div class="contact">
                         <p>200 Miller Road Sumter, SC 29150</p>
@@ -231,7 +230,7 @@
                 If the icon is within the visible part of the window, we add the `fade-in` class to trigger the CSS animation.
             */
             
-            const icons = document.querySelectorAll('.column img, .circle-img');
+            const icons = document.querySelectorAll('.column img, .circle-img, .text, .stat');
             window.addEventListener('scroll', function() {
                 icons.forEach(icon => {
                     const iconTop = icon.getBoundingClientRect().top;
