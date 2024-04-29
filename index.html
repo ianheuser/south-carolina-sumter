@@ -11,9 +11,7 @@
         <!-- Add Font Awesome Kit for Social Icons-->
         <script src="https://kit.fontawesome.com/fe3a541148.js" crossorigin="anonymous"></script>
     </head>
-
     <body>
-
         <!-- BEGIN HIDDEN MODAL AND FORM -->
         <div class="modal-background">
             <div class="modal">
@@ -125,7 +123,6 @@
             </div>
         </section>
 
-
         <!-- Why Choose Sumter Columns-->
         <section class="why-choose-usc bg-color-black">
             
@@ -215,7 +212,6 @@
                   <!-- <img src="./images/mascot.svg" width="800" height="584" alt="Fire Ant Mascot" class="mascot"/> -->
                 </div>
             </div>
-            
         </footer>
 
         <script>
@@ -239,16 +235,19 @@
                 });
             });
 
+            const body = document.querySelector('body');
             const modal = document.querySelector('.modal-background');
             const moreInfo = document.getElementById('more-info');
             const close = document.querySelector('.close');
 
             moreInfo.addEventListener('click', function() {
                 modal.classList.add('reveal');
+                body.style.overflow = 'hidden'; // Prevent scrolling the body while the modal is up
             });
 
             close.addEventListener('click', function() {
                 modal.classList.remove('reveal');
+                body.style.overflow = 'scroll'; // Prevent scrolling the body while the modal is up
             });
         
         </script>
