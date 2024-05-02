@@ -114,12 +114,12 @@ h1 {
 }
 
 h1.hero {
-    font-size: 56px;
+    font-size: 68px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h1.hero span.sub {
-  font-size: 20px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -166,7 +166,7 @@ button.button, a.button, input[type="submit"]{
 	transition: all 0.3s;
 	display: flex;
 	flex-direction: column;
-	padding: 5px 50px;
+	padding: 6px 40px 4px;
 	/* margin: 13px auto; */
 	min-width: 186px;
 	text-transform: uppercase;

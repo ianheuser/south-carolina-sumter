@@ -228,10 +228,11 @@ section.stats {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	padding-bottom: 150px;
-    padding-top: 75px
+	padding-bottom: 130px;
+    padding-top: 30px;
+    gap: 30px;
 }
-
+                
 .stat {
     display: flex;
     flex-direction: column;
@@ -247,11 +248,13 @@ section.stats {
 .stat h2 {
     color: var(--color-secondary);
     font-size: 100px;
-}
-
-.stat h3, .stat h2 {
     margin: 0px;
     text-align: center;
+}
+
+.stat h3 {
+    text-align: center;
+    margin-top: -26px;
 }
 
 
@@ -282,7 +285,9 @@ section.circle-top {
 	min-height: 300px;
 	max-height: 450px;
 }
-
+i.asterisk{
+    font-size: .75em;
+}
 .circle-img.value {
 	background-image: url('../images/circle-value.png')
 }
@@ -378,7 +383,7 @@ footer p {
     margin: 0 auto;
     text-align: center; 
     padding-top: 30px;
-	padding-bottom: 150px;
+	padding-bottom: 130px;
     margin-top: -1px;
 }
 .why-choose-usc::before {
@@ -387,8 +392,7 @@ footer p {
     width: 80vw;
     height: 2px;
     background-color: var(--color-white);
-    max-width: 300px;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
     
 }
 
@@ -427,7 +431,7 @@ footer p {
 }
 
 section.circle-top.your-future {
-    padding-bottom: 75px;
+    padding-bottom: 25px;
 }
 
 button#more-info {
@@ -486,7 +490,38 @@ h2 span.bottom {
     margin: 20px auto;
 }
 
+h2.stat {
+    margin-bottom: -24px;
+}
+
+h3{
+    line-height: 1;
+}
+
+.copy p{
+    font-size: .9em;
+}
+
+.arrow-reveal{
+    padding-left: 13px;
+	height: 13px;
+	width: 13px;
+}
 @media (min-width: 900px) {
+
+    
+h1.hero {
+    font-size: 72px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1.hero span.sub {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  display: block;
+}
 
     .modal-header h2 {
         font-size: 32px;
@@ -520,11 +555,14 @@ h2 span.bottom {
      section.stats {
         flex-direction: row;
         justify-content:center;
+        align-items: flex-start;
 		margin: auto;
+        padding-top: 40px;
+		padding-bottom: 80px;
     }
 
     .why-choose-usc {
-        padding-bottom: 150px;
+        padding-bottom: 130px;
     }
 
     .why-choose-usc .columns {
@@ -565,10 +603,20 @@ h2 span.bottom {
         
     }
 
+    h3{
+        line-height: 1;
+    }
 }
 
 @media (min-width: 1200px) {
-    
+
+    .why-choose-usc {
+        padding-bottom: 70px;
+    }
+    section.stats {
+        padding-top: 30px;
+		padding-bottom: 60px;
+    }
     .text a.button{
         margin: 20px 0px;
         }
@@ -600,7 +648,7 @@ h2 span.bottom {
 		margin-top: unset;
 		height: 566px;
 		rotate: 0deg;
-		top: -223px;
+		top: -246px;
 		right: 0px;
 		bottom: unset;  
         background-image: url(../images/mascot-rotated.svg);    
@@ -611,9 +659,6 @@ h2 span.bottom {
     }
 	 section.stats {
         max-width: 1200px;
-    }
-    h3{
-        line-height: 1;
     }
     section.circle-top {
         flex-direction: row;
