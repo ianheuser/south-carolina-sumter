@@ -16,7 +16,6 @@
 body {
    overflow-x: hidden;
    }
-
  header {
     background-color: var(--color-primary);
     padding: 2px 13px;
@@ -507,12 +506,19 @@ h3{
 	height: 13px;
 	width: 13px;
 }
+
+
+#value {
+    padding-bottom: 30px;
+}
+
 @media (min-width: 900px) {
 
     
 h1.hero {
-    font-size: 72px;
+    font-size: 84px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    list-height: 1;
 }
 
 h1.hero span.sub {
