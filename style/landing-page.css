@@ -258,7 +258,7 @@ section.stats {
 
 
 section.circle-top {
-    padding-bottom: 150px;
+    padding-bottom: 113px;
     border-top: solid 61px var(--color-primary);
 }
 
@@ -314,6 +314,7 @@ header .logo {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+    padding-bottom: 75px;
 }
 
 
@@ -370,12 +371,11 @@ header .logo {
 }
 .why-choose-usc::before {
     content: '<div class="white-line></div>';
-    display: block;
-    width: 80vw;
-    height: 2px;
-    background-color: var(--color-white);
-    margin-bottom: 50px;
-    
+	display: block;
+	width: 80vw;
+	height: 2px;
+	background-color: var(--color-white);
+	margin-bottom: 62px;
 }
 
 .why-choose-usc .columns .column {
@@ -391,8 +391,10 @@ header .logo {
 
 .columns {
     display: flex;
-    justify-content: space-around; 
-    flex-direction: column;
+	justify-content: space-around;
+	flex-direction: column;
+	gap: 30px;
+	margin-top: 30px;
 }
 
 .column {
@@ -490,7 +492,7 @@ h3{
 }
 .footer .logo.center {
     display: block;
-    width: 100%;
+    width: 90%;
 	/* max-width: 350px; */
 	/* min-width: 200px; */
 	margin: 75px auto 25px;
@@ -526,11 +528,22 @@ h3{
 }
 
 #value { 
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 
 @media (min-width: 900px) {
+
+    .mascot{
+        width: 110%;
+        max-width: 758px;
+        margin-right: -20%;
+        min-width: 500px;
+        }
+
+    #value { 
+        padding-bottom: 150px;
+    }
 
     .mascot-contain {
         display: flex;
@@ -711,8 +724,8 @@ h3{
         padding-bottom: 70px
     }
     section.stats {
-        padding-top: 30px;
-		padding-bottom: 60px;
+        padding-top: 40px;
+		padding-bottom: 80px;
     }
     .text a.button{
         margin: 20px 0px;
