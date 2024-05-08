@@ -1,4 +1,4 @@
- /* Add your CSS styles here */
+
  
  html,body {
     font-family: var(--font-fam);
@@ -9,13 +9,167 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 393px;
+    min-width: 375px;
     width: 100%;
+    background-color: var(--color-white);
+    font-weight: 400;
+    line-height: 1.5;
 }
 
+bold, strong {
+    font-family: var(--font-fam-bold);
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-fam-header);
+  font-weight: bold;
+  color: var(--color-black);
+  text-transform: uppercase;
+  margin-block-start: 0px;
+	margin-block-end: 0px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h1.hero {
+  font-size: 82px;
+	text-shadow: rgba(0, 0, 0, 0.5) 2px 2px 4px;
+	line-height: 1;
+}
+h1.hero span.sub {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  display: block;
+  line-height: 1;
+}
+
+h2 {
+  font-family: var(--font-fam-header);
+  font-size: 42px;
+}
+
+h3 {
+  font-family: var(--font-fam-header);
+  font-size: 24px;
+}
+
+h4 {
+  font-family: var(--font-fam-bold);
+  font-size: 21px;
+  margin-bottom: -20px;
+  margin-top: 5px;
+}
+
+h5 {
+  font-family: var(--font-fam-header);
+  font-size: 16px;
+}
+
+h6 {
+  font-family: var(--font-fam-header);
+  font-size: 14px;
+}
+
+p {
+    color: var(--color-black);
+    font-family: var(--font-fam);
+    font-size: 20px;
+    font-style: normal;
+}
+
+button.button, a.button, input[type="submit"]{
+    font-family: var(--font-fam);
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--color-white);
+	background-color: var(--color-black);
+	border: none;
+	border-radius: 50px;
+	/* height: 40px; */
+	cursor: pointer;
+	transition: all 0.3s;
+	display: flex;
+	flex-direction: column;
+	padding: 6px 40px 4px;
+	/* margin: 13px auto; */
+	min-width: 186px;
+	text-transform: uppercase;
+	text-decoration: none;
+	width: fit-content;
+	text-align: center;
+}
+
+button#more-info {
+    text-transform: uppercase;
+    position: sticky;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    padding: 13px 0px;
+    position: sticky;
+    top: 80px;
+    box-shadow:rgba(0, 0, 0, .4) 0px 10px 7px 0px;
+    border: none;
+}
+
+button#more-info:hover {
+	text-shadow: 0px 0px 13px rgba(255, 255, 255, 1);
+    transition: all 0.3s ease-in-out;
+    padding: 15px 0px;
+}
+
+a.button:hover , input[type="submit"]:hover {
+	text-shadow: 0px 0px 13px rgba(255, 255, 255, 1);
+    transition: all 0.3s ease-in-out;
+}
+
+section.bg-color-black a.button {
+  background-color: var(--color-secondary);
+}
+
+section.bg-color-white a.button {
+  background-color: var(--color-primary);
+}
+
+section.bg-color-primary a.button, section.bg-color-secondary a.button {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+section.bg-color-black h4, section.bg-color-white h4, section h4 {
+  color: var(--color-secondary);
+}
+
+section.bg-color-black h4.color-white {
+  color: var(--color-white);
+}
+
+section.bg-color-primary h4, section.bg-color-secondary h4 {
+  color: var(--color-black);
+}
+
+section.bg-color-black p, section.bg-color-primary p, section.bg-color-secondary p {
+  color: var(--color-white);
+  max-width: 50;
+}
+
+section.bg-color-white p {
+  color: var(--color-black);
+}
+
+
+
 body {
-   overflow-x: hidden;
-   }
+    overflow-x: hidden;
+}
+
  header {
     background-color: var(--color-primary);
     padding: 2px 13px;
@@ -37,19 +191,24 @@ body {
     box-sizing: border-box;
  }
 
-.header {
-    margin-bottom: 20px; 
-}
-
-form {
+ form {
     display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	width: 100%;
 	gap: 20px;
+    margin-top: 20px;
 }
 
- .form-section {
+.header {
+    margin-bottom: 20px; 
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.form-section {
     background-color: var(--color-secondary);
     text-align: center;
     height: 45px;
@@ -138,25 +297,25 @@ select {
 	padding-left: 13px;
 }
 
-.input-container.submit {
-	justify-content: flex-start;
-}
-
 #submit {
-    width: fit-content;
+	padding: 10px 40px 7px;
 	text-align: center;
 	justify-content: center;
 	align-items: center;
+    margin-top: 20px;
+}
+
+input[type=text], select, input[type=email] {
+	border-radius: 6px;
 }
 
 span.close {
-  position: absolute;
-  top: -40px;
-  right: -17px;
-  font-size: 50px;
-  cursor: pointer;
+    position: absolute;
+    top: -30px;
+	font-size: 60px;
+    right: -13px;
+    cursor: pointer;
 }
-
 
 .sticky {
     z-index: 1000;
@@ -185,7 +344,6 @@ section.hero {
 	align-items: center;
 	justify-content: center;
 }
-
 
 .sumter-smart {
     background-color: var(--color-secondary);
@@ -299,8 +457,6 @@ i.asterisk{
 	background-image: url('../images/circle-experience.png')
 }
 
-
-
 header .logo {
     width: 200px;
 }
@@ -316,7 +472,6 @@ header .logo {
 	flex-direction: column;
     padding-bottom: 75px;
 }
-
 
 .copy {
     display: flex;
@@ -343,8 +498,6 @@ header .logo {
     color: white;
     font-size: 30px;
 }
-
-
 
 .text {
     max-width: 500px;
@@ -416,26 +569,6 @@ header .logo {
 
 section.circle-top.your-future {
     padding-bottom: 25px;
-}
-
-button#more-info {
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease-in-out;
-    font-size: 16px;
-    padding: 13px 0px;
-    position: sticky;
-    top: 80px;
-    box-shadow:rgba(0, 0, 0, .4) 0px 10px 7px 0px;
-}
-
-button#more-info:hover {
-	text-shadow: 0px 0px 13px rgba(255, 255, 255, 1);
-    transition: all 0.3s ease-in-out;
-    padding: 15px 0px;
 }
 
 
@@ -532,14 +665,46 @@ h3{
 }
 
 
+
+
+@media (max-width: 393px) {
+
+    /* 
+    ///////////////////////////////////////////////
+    VIEWPORT SIZE SMALLER THAN 393PX
+    ///////////////////////////////////////////////
+    */
+
+    h1.hero {
+        font-size: 62px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        line-height: 1;
+    }
+    h1.hero span.sub {
+        font-size: 22px;
+    }
+    html,body{
+        max-width: 375px;
+        overflow-x: hidden;
+    }
+}
+
+
+
 @media (min-width: 900px) {
+
+    /* 
+    ///////////////////////////////////////////////
+    VIEWPORT SIZE 900PX OR GREATER
+    ///////////////////////////////////////////////
+    */
 
     .mascot{
         width: 110%;
         max-width: 758px;
         margin-right: -20%;
         min-width: 500px;
-        }
+    }
 
     #value { 
         padding-bottom: 150px;
@@ -556,6 +721,7 @@ h3{
         /* OVERFLOW: hidden; */
         margin-top: -220px;
     }
+
     .footer-contain {
         display: flex;
         justify-content: space-between;
@@ -688,10 +854,6 @@ h3{
         width: 300px;
     }
 
-     #more-info {
-        font-size: 18px;
-     }
-
     .why-choose-usc::before {
         width: 80vw;
         max-width: 1200px;
@@ -708,9 +870,7 @@ h3{
 	}
 
     button#more-info {
-        position: sticky;
-        top: 125px;
-        
+        top: 125px; 
     }
 
     h3{
@@ -718,7 +878,14 @@ h3{
     }
 }
 
+
 @media (min-width: 1200px) {
+
+     /* 
+    ///////////////////////////////////////////////
+    VIEWPORT SIZE 1200PX OR GREATER
+    ///////////////////////////////////////////////
+    */
 
     .why-choose-usc {
         padding-bottom: 70px
@@ -784,7 +951,19 @@ h3{
 
 }
 
+/* 
+///////////////////////////////////////////////
+VIEWPORT SIZE GREATER or EQUAL TO 1440PX 
+///////////////////////////////////////////////
+*/
+
 @media (min-width: 1440px) {
+
+     /* 
+    ///////////////////////////////////////////////
+    VIEWPORT SIZE 1440PX OR GREATER
+    ///////////////////////////////////////////////
+    */
 
     section.circle-top {
         gap: 100px;
@@ -799,32 +978,34 @@ h3{
 }
 
 
-
-
-
- /* Pulsing Social Icon animation */
+/* 
+///////////////////////////////////////////////
+// // // // ANIMATION FUNCTIONALITY // // // //
+///////////////////////////////////////////////
+*/
 
  @keyframes pulsing {
-    0%   {filter: drop-shadow(0px 0px 0px white)}
-    50%  {filter: drop-shadow(0px 0px 9px white);}
-    100% {filter: drop-shadow(0px 0px 0px white)}
+    0%   {filter: drop-shadow(0px 3px 5px rgba(255, 255, 255, 0))}
+    50%  {filter: drop-shadow(0px 3px 5px rgba(255, 255, 255, 0.677));}
+    100% {filter: drop-shadow(0px 3px 5px rgba(255, 255, 255, 0))}
   }
 
   /* Apply the keyframed animaation above to the social icon class */
-
   .social-icon:hover {
     animation-name: pulsing;
     animation-duration: 1s;
     animation-iteration-count: infinite;
   } 
 
-
-/* Css class to add on to anything that we want to animate upward */
+/* CSS class to add on to anything that we want to animate upward */
+/* We attach this class programatically to elements aa they cross into our viewport via the JS on the index page */
 .animate-upward {
     animation-name: upward;
     animation-duration: 1s;
 }
-  
+
+/*  The .animate-upward class defined above will use this keyframe animation */ 
+/*  The animation-name property of the class above directly correlates with the name of the keyframe series below */
 @keyframes upward {
 0% {
     transform: translateY(100px);
