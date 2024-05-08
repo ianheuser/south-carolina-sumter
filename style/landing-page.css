@@ -990,27 +990,27 @@ VIEWPORT SIZE GREATER or EQUAL TO 1440PX
     100% {filter: drop-shadow(0px 3px 5px rgba(255, 255, 255, 0))}
   }
 
-  /* Apply the keyframed animaation above to the social icon class */
-  .social-icon:hover {
-    animation-name: pulsing;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-  } 
+    /* Apply the keyframed animaation above to the social icon class */
+    .social-icon:hover {
+        animation-name: pulsing;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    } 
 
-/* CSS class to add on to anything that we want to animate upward */
-/* We attach this class programatically to elements aa they cross into our viewport via the JS on the index page */
-.animate-upward {
-    animation-name: upward;
-    animation-duration: 1s;
-}
+    /* CSS class to add on to anything that we want to animate upward */
+    /* We attach this class programatically to elements aa they cross into our viewport via the JS on the index page */
+    .animate-upward {
+        animation-name: upward;
+        animation-duration: 1s;
+    }
 
-/*  The .animate-upward class defined above will use this keyframe animation */ 
-/*  The animation-name property of the class above directly correlates with the name of the keyframe series below */
-@keyframes upward {
-0% {
-    transform: translateY(100px);
-}
-100% {
-    transform: translateY(0px);
-}
+    /*  The .animate-upward class defined above will use this keyframe animation */ 
+    /*  The animation-name property of the class above directly correlates with the name of the keyframe series below */
+    @keyframes upward {
+    0% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
