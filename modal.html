@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang=”en” manifest="/cache.appcache">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modal Functionality</title>
+        <!-- Add Font Awesome Kit for Social Icons-->
+		<style>
+
+			.modal-header h2 {
+				font-size: 28px;
+				margin-top: -13px;
+				margin-bottom: 8px;
+				color: var(--color-primary);
+			}
+
+			.modal-header h2 span {
+				color: var(--color-secondary);
+			}
+
+			.modal-background {
+				background-color: rgba(0, 0, 0, 0.5);
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				z-index: 5000;
+				display: none;
+				justify-content: center;
+				align-items: flex-start;
+				transition: background-color 0.3s ease-in-out;
+				overflow-y: scroll;
+			}
+
+			.modal-background.reveal {
+				display: flex;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+
+			.modal {
+				border-radius: 10px;
+				padding: 28px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+				max-width: 400px;
+				width: 80%;
+				box-sizing: border-box;
+				transition: background-color 0.3s ease-in-out;
+				margin-top: 145px;
+				z-index: 5001;
+				background-color: white;
+			}
+
+			.modal-header {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				border-bottom: solid .5px rgba(0, 0, 0, 0.8);
+				padding-bottom: 5px;
+				position: relative;
+			}
+		</style>
+    </head>
+
+	<body>
+
+	<div class="modal-background" id="modal-background">
+		<div class="modal">
+			<div class="modal-header">
+				<h2>Modal Header</h2>
+				<span class="close" id="close">&times;</span>
+			</div>
+			<div class="modal-body">
+				<p>Some important text</p>
+			</div>
+		</div>
+	</div> <!-- .modal-background -->
+
+	<button id="more-info" class="color-white bg-color-secondary sticky">Request More Info <img class="arrow-reveal" alt="reveal more triangle" src="./images/triangle-down.svg" /></button>
+
+	</body>
+		<script>
+
+			///////////////////////////////////////////////
+			// // // // ANIMATION FUNCTIONALITY // // // //
+			///////////////////////////////////////////////
+
+			const itemsToAnimateOnScroll = document.querySelectorAll('.column img, .circle-img, .text, .stat'); // Select items that we are going to animate 
+			window.addEventListener('scroll', function() { //Tell the browser window object to listen for scroll events
+				itemsToAnimateOnScroll.forEach(item => { //Every time the scroll is fired, we loop through the items we selected above...
+					const itemTop = item.getBoundingClientRect().top; // ...and get the current top position of each item...
+		            if (itemTop < (window.innerHeight * 0.8)) { // ...and check if the top of the item is within 80% of the window's current height.
+						item.classList.add('fade-in'); //If y coordinate of the top of the element is within 80% of the window's height, add the fade-in class to the element.
+		                item.classList.add('animate-upward'); //... and add the animate-upward class to the element.
+		            } 
+		        });
+		    });
+
+			///////////////////////////////////////////
+			// // // // MODAL FUNCTIONALITY // // // //
+			///////////////////////////////////////////
+
+		    const modalBackground = document.getElementById("modal-background"); // Select the modal background in the dom
+		    const moreInfo = document.getElementById('more-info'); // Select the "Request More Info" button in the dom
+		    const close = document.getElementById('close'); // define a "close modal" button in the dom
+		
+		    moreInfo.addEventListener('click', function() {
+		        modalBackground.classList.add('reveal'); //Add a class to the modal to reveal it (via our pre-defined CSS rules for the "reveal" class)
+		        document.querySelector('body').style.overflow = 'hidden'; // Prevent scrolling the body while the modal is up
+		    });
+		
+		    close.addEventListener('click', function() {
+		        modalBackground.classList.remove('reveal'); // Remove the "reveal" class from the modal so it goes back into hiding
+		        document.querySelector('body').style.overflow = 'scroll'; // Re-enable scrolling the body when modal is closed
+		    });
+		
+		</script>
+		
+
+
+    </body>  
+
+</html>
